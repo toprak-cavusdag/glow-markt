@@ -4,7 +4,7 @@ import NavbarBottom from './components/navbarBottom/NavbarBottom';
 
 const Navbar = () => {
   return (
-    <nav className='z-0  w-full h-full border-b border-opacity-10'>
+    <nav className='z-0 w-full h-full border-b border-opacity-10'>
       <NavbarTop />
       <NavbarBottom />
     </nav>
