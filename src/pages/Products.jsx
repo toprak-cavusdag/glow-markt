@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from './components/productCard/ProductCard';
+import ProductCard from '../components/home/products/components/productCard/ProductCard';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +16,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className='container mx-auto w-full grid grid-cols-4 justify-center items-center gap-10 mb-16'>
+    <div className='container mx-auto w-full grid grid-cols-4 mt-16 justify-center items-center gap-10 mb-16'>
       {products.map((product, index) => (
         <ProductCard
           src={product.image}
