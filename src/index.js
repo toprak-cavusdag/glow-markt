@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +16,7 @@ root.render(
       <Routes>
         <Route index element={<Home />} />
         <Route path='products' element={<Products />} />
-        <Route path='/products/:id' element={<Home />} />
+        <Route path='/products/:productID' element={<ProductDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
