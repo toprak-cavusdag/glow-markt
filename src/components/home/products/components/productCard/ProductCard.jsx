@@ -5,6 +5,7 @@ import ProductImage from './components/productImage/ProductImage';
 import ProductButton from './components/productButton/ProductButton';
 import ProductShipping from './components/productShipping/ProductShipping';
 import ProductPrice from './components/productPrice/ProductPrice';
+import ProductTitle from './components/productTitle/ProductTitle';
 
 const ProductCard = ({ title, src, price, rating, id }) => {
   let rateValue = rating.rate;
@@ -17,7 +18,7 @@ const ProductCard = ({ title, src, price, rating, id }) => {
     >
       <ProductImage src={src} title={title} />
       <div className='flex flex-col justify-center items-center'>
-        <h2 className=' font-bold text-lg my-5'>{title}</h2>
+        <ProductTitle title={title} />
 
         <div className='flex flex-col justify-center items-center gap-5'>
           <ProductPrice price={price} />
