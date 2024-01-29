@@ -9,7 +9,7 @@ import ProductTitle from './components/productTitle/ProductTitle';
 
 const ProductCard = ({ title, src, price, rating, id }) => {
   let rateValue = rating.rate;
-  let star = Math.ceil(rateValue);
+  let star = Math.round(rateValue);
 
   return (
     <Link
