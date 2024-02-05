@@ -1,17 +1,17 @@
 import React from 'react';
-import signImage from '../assets/signin.jpg';
+import signImage from '../assets/signin.jpeg';
 
 const SignIn = () => {
   return (
-    <div className='min-h-screen flex justify-center items-center'>
-      <div className='border flex justify-center items-center h-full shadow-sm overflow-hidden max-w-3xl  rounded-lg mb-10'>
+    <div className='h-[85vh] flex justify-center items-center'>
+      <div className='border flex justify-center items-center shadow-sm overflow-hidden max-w-3xl  rounded-lg mb-10'>
         <div className='p-10 w-96 flex items-center justify-center flex-col'>
           <h2 className='text-4xl  font-semibold text-gray-700 tracking-wider'>
-            Sign in
+            Sign In
           </h2>
 
           <p className='mb-16 mt-5 text-xs text-gray-400 text-center'>
-            "Register now, don't miss the benefits!🚀"
+            Register now, don't miss the benefits 🚀
           </p>
 
           <div className='flex gap-5 flex-col items-center justify-center w-full'>
