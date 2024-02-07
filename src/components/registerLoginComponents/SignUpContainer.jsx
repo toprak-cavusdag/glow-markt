@@ -5,11 +5,16 @@ import SignInput from './components/signInput/SignInput';
 import SignButton from './components/signButton/SignButton';
 import SignImage from './components/signImage/SignImage';
 import Image from '../../assets/signup.jpeg';
+import { useNavigate } from 'react-router-dom';
 import SignMiniDesc from './components/signMiniDesc/SignMiniDesc';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/firebase';
+import { userLogin } from '../../helpers/User';
 
 const SignUpContainer = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -19,8 +24,17 @@ const SignUpContainer = () => {
     setPassword(event.target.value);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+    try {
+      const data = await createUserWithEmailAndPassword(auth, email, password);
+      setEmail('');
+      setPassword('');
+      userLogin(email);
+      navigate('/sign-in');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
