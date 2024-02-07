@@ -6,7 +6,6 @@ import SignButton from './components/signButton/SignButton';
 import SignImage from './components/signImage/SignImage';
 import Image from '../../assets/signup.jpeg';
 import SignMiniDesc from './components/signMiniDesc/SignMiniDesc';
-import { UserSignIn } from '../../services/User';
 
 const SignUpContainer = () => {
   const [email, setEmail] = useState('');
