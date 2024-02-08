@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import SignMiniDesc from './components/signMiniDesc/SignMiniDesc';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
-import { userLogin } from '../../helpers/User';
 
 const SignUpContainer = () => {
   const [email, setEmail] = useState('');
@@ -30,7 +29,6 @@ const SignUpContainer = () => {
       const data = await createUserWithEmailAndPassword(auth, email, password);
       setEmail('');
       setPassword('');
-      userLogin(email);
       navigate('/sign-in');
     } catch (err) {
       console.log(err);

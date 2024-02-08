@@ -7,12 +7,14 @@ import SignImage from './components/signImage/SignImage';
 import Image from '../../assets/signin.jpeg';
 import SignMiniDesc from './components/signMiniDesc/SignMiniDesc';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { userLogin } from '../../helpers/User';
 import { auth } from '../../firebase/firebase';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../features/user/userSlice';
 
 const SignInContainer = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -26,9 +28,9 @@ const SignInContainer = () => {
     e.preventDefault();
     try {
       const data = await signInWithEmailAndPassword(auth, email, password);
+      dispatch(setUser(email));
       setEmail('');
       setPassword('');
-      userLogin(email);
     } catch (err) {
       console.log(err);
     }
